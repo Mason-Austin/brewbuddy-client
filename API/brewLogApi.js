@@ -1,14 +1,14 @@
 import { clientCredentials } from "../utils/client";
 
-const getAllBrews = () => new Promise((resolve, reject) => {
-  fetch(`${clientCredentials.databaseURL}/brews`)
+const getBrewLogByBrew = (brewId) => new Promise((resolve, reject) => {
+  fetch(`${clientCredentials.databaseURL}/brew_logs?brew=${brewId}`)
     .then((response) => response.json())
     .then(resolve)
     .catch(reject);
 });
 
-const getSingleBrew = (brewId) => new Promise((resolve, reject) => {
-  fetch(`${clientCredentials.databaseURL}/brews/${brewId}`, {
+const getSingleBrewLog = (brewLogId) => new Promise((resolve, reject) => {
+  fetch(`${clientCredentials.databaseURL}/brew_logs/${brewLogId}`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
@@ -19,32 +19,32 @@ const getSingleBrew = (brewId) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-const createBrew = (brew) => new Promise((resolve, reject) => {
-  fetch(`${clientCredentials.databaseURL}/brews`, {
+const createBrewLog = (brewLog) => new Promise((resolve, reject) => {
+  fetch(`${clientCredentials.databaseURL}/brew_logs`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify(brew),
+    body: JSON.stringify(brewLog),
   })
     .then((data) => resolve(data))
     .catch((error) => reject(error));
 });
 
-const updateBrew = (brew) => new Promise((resolve, reject) => {
-  fetch(`${clientCredentials.databaseURL}/brews/${brew.id}`, {
+const updateBrewLog = (brewLog) => new Promise((resolve, reject) => {
+  fetch(`${clientCredentials.databaseURL}/brews/${brewLog.id}`, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify(brew),
+    body: JSON.stringify(brewLog),
   })
     .then((data) => resolve(data))
     .catch((error) => reject(error));
 });
 
-const deleteSingleBrew = (brewId) => new Promise((resolve, reject) => {
-  fetch(`${clientCredentials.databaseURL}/brews/${brewId}`, {
+const deleteSingleBrewLog = (brewLogId) => new Promise((resolve, reject) => {
+  fetch(`${clientCredentials.databaseURL}/brews/${brewLogId}`, {
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json',
