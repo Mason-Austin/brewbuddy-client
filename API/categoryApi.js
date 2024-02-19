@@ -41,3 +41,5 @@ const createBrewCategory = (categoryId, brewId) => new Promise((resolve, reject)
     .then((data) => resolve(data))
     .catch((error) => reject(error));
 });
+
+export { getAllCategories, getSingleCategory, deleteBrewCategory, createBrewCategory}

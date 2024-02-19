@@ -53,3 +53,5 @@ const deleteSingleBrewLog = (brewLogId) => new Promise((resolve, reject) => {
     .then(resolve)
     .catch(reject);
 });
+
+export {getBrewLogByBrew, getSingleBrewLog, createBrewLog, updateBrewLog, deleteSingleBrewLog}
