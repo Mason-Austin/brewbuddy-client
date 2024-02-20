@@ -1,7 +1,7 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
-function BrewLogCard(brewLog) {
+function BrewLogCard({ brewLog }) {
   return (
     <Card>
       <Card.Header>{brewLog.date}</Card.Header>
