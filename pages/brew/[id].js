@@ -11,8 +11,8 @@ export default function ViewBrew() {
   const { id } = router.query;
 
   useEffect(() => {
-      getSingleBrew(id).then(setBrew)
-      getBrewLogByBrew(id).then(setBrewLogs)
+    getSingleBrew(id).then(setBrew)
+    getBrewLogByBrew(id).then(setBrewLogs)
   }, [id]);
 
   return (
