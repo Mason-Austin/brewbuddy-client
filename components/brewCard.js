@@ -2,10 +2,17 @@ import React from 'react';
 import { Card, Button } from 'react-bootstrap'; // Assuming you are using react-bootstrap
 import { useAuth } from '../utils/context/authContext';
 import { useRouter } from 'next/router';
+import { deleteSingleBrew } from '../API/brewApi';
 
-function BrewCard({ brew }) {
+function BrewCard({ brew, onUpdate }) {
   const { user } = useAuth();
   const router = useRouter();
+
+  const deleteThisBrew = () => {
+    if (window.confirm(`Delete ${brew.name} brew?`)) {
+      deleteSingleBrew(brew.id).then(() => onUpdate());
+    }
+  };
 
   return (
     <Card style={{ width: '18rem' }}>
