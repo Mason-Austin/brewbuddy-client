@@ -26,7 +26,7 @@ function BrewCard({ brew, onUpdate }) {
         {(user.id === brew.user.id) ? (
           <>
             <Button variant="success" onClick={() => { router.push(`/brew/edit/${brew.id}`); }}>Edit</Button>
-            <Button variant="danger">Delete</Button>
+            <Button variant="danger" onClick={() => { deleteThisBrew(); }}>Delete</Button>
           </>
         ) : ('')}
       </Card.Body>
