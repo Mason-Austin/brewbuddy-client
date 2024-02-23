@@ -34,7 +34,7 @@ export default function ViewBrew() {
           <div>
             <BrewLogModel brew={brew} onUpdate={getAllBrewlogs} />
             {brewLogs.map((brewLog) => (
-              <BrewLogCard key={brewLog.id} brewLog={brewLog} />
+              <BrewLogCard key={brewLog.id} brew={brew} brewLog={brewLog} onUpdate={getAllBrewlogs} />
             ))}
           </div>
         </>

@@ -32,7 +32,7 @@ const createBrewLog = (brewLog) => new Promise((resolve, reject) => {
 });
 
 const updateBrewLog = (brewLog) => new Promise((resolve, reject) => {
-  fetch(`${clientCredentials.databaseURL}/brews/${brewLog.id}`, {
+  fetch(`${clientCredentials.databaseURL}/brew_logs/${brewLog.id}`, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
@@ -44,7 +44,7 @@ const updateBrewLog = (brewLog) => new Promise((resolve, reject) => {
 });
 
 const deleteSingleBrewLog = (brewLogId) => new Promise((resolve, reject) => {
-  fetch(`${clientCredentials.databaseURL}/brews/${brewLogId}`, {
+  fetch(`${clientCredentials.databaseURL}/brew_logs/${brewLogId}`, {
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json',
