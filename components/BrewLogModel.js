@@ -12,7 +12,7 @@ function BrewLogModel({ brew, onUpdate, brewLog }) {
   return (
     <>
       {brewLog ? (
-        <Button variant="primary" onClick={handleShow}>
+        <Button variant="success" onClick={handleShow}>
           Edit Log
         </Button>
       ) : (
