@@ -21,6 +21,13 @@ function BrewCard({ brew, onUpdate }) {
       <Card.Body>
         <Card.Title>{brew.name}</Card.Title>
         <Card.Text>{brew.description}</Card.Text>
+        <Card.Text>Categories: {brew.categories.map((category, index) => {
+          if (index === brew.categories.length - 1) {
+            return category.label;
+          }
+          return `${category.label}, `;
+        })}
+        </Card.Text>
         <Card.Text>Brewing Stage: {brew.stage}</Card.Text>
         <Button variant="primary" onClick={() => { router.push(`/brew/${brew.id}`); }}>Details</Button>
         {(user.id === brew.user.id) ? (
