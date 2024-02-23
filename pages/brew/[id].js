@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import { getSingleBrew } from "../../API/brewApi";
 import { getBrewLogByBrew } from "../../API/brewLogApi"
 import BrewLogCard from "../../components/brewLogCard"
+import BrewLogModel from "../../components/BrewLogModel";
 
 export default function ViewBrew() {
   const [brew, setBrew] = useState(null);
@@ -10,9 +11,13 @@ export default function ViewBrew() {
   const router = useRouter();
   const { id } = router.query;
 
+  const getAllBrewlogs = () => {
+    getBrewLogByBrew(id).then(setBrewLogs);
+  };
+
   useEffect(() => {
-    getSingleBrew(id).then(setBrew)
-    getBrewLogByBrew(id).then(setBrewLogs)
+    getSingleBrew(id).then(setBrew);
+    getAllBrewlogs();
   }, [id]);
 
   return (
@@ -27,6 +32,7 @@ export default function ViewBrew() {
             <img src={'https://myfermentedfoods.com/wp-content/uploads/2019/11/Mead.jpg'} alt={brew.name} />
           </div>
           <div>
+            <BrewLogModel brew={brew} onUpdate={getAllBrewlogs} />
             {brewLogs.map((brewLog) => (
               <BrewLogCard key={brewLog.id} brewLog={brewLog} />
             ))}
