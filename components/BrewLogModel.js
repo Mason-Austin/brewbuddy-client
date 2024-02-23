@@ -3,7 +3,7 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import BrewLogForm from './forms/brewLogForm';
 
-function BrewLogModel({ brew, onUpdate }) {
+function BrewLogModel({ brew, onUpdate, brewLog }) {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -11,12 +11,18 @@ function BrewLogModel({ brew, onUpdate }) {
 
   return (
     <>
-      <Button variant="primary" onClick={handleShow}>
-        Create Log
-      </Button>
+      {brewLog ? (
+        <Button variant="primary" onClick={handleShow}>
+          Edit Log
+        </Button>
+      ) : (
+        <Button variant="primary" onClick={handleShow}>
+          Create Log
+        </Button>
+      )}
 
       <Modal show={show} onHide={handleClose}>
-        <BrewLogForm brew={brew} onHide={handleClose} onUpdate={onUpdate} />
+        <BrewLogForm brew={brew} onHide={handleClose} onUpdate={onUpdate} initalBrewLog={brewLog} />
       </Modal>
     </>
   );

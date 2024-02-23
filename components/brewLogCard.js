@@ -2,6 +2,7 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { useAuth } from '../utils/context/authContext';
 import { deleteSingleBrewLog } from '../API/brewLogApi';
+import BrewLogModel from './BrewLogModel';
 
 function BrewLogCard({ brewLog, onUpdate, brew }) {
   const { user } = useAuth();
@@ -18,7 +19,7 @@ function BrewLogCard({ brewLog, onUpdate, brew }) {
         <Card.Text>{brewLog.log}</Card.Text>
         { brew.user.id === user.id && (
           <>
-            <Button variant="success">Edit</Button>
+            <BrewLogModel onUpdate={onUpdate} brewLog={brewLog} brew={brew} />
             <Button variant="danger" onClick={() => { deleteThisBrewLog(); }}>Delete</Button>
           </>
         )}
