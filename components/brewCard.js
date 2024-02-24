@@ -1,7 +1,7 @@
-import React from 'react';
-import { Card, Button } from 'react-bootstrap'; // Assuming you are using react-bootstrap
-import { useAuth } from '../utils/context/authContext';
+import PropTypes from 'prop-types'; // Import PropTypes
+import { Card, Button } from 'react-bootstrap';
 import { useRouter } from 'next/router';
+import { useAuth } from '../utils/context/authContext';
 import { deleteSingleBrew } from '../API/brewApi';
 
 function BrewCard({ brew, onUpdate }) {
@@ -42,3 +42,24 @@ function BrewCard({ brew, onUpdate }) {
 }
 
 export default BrewCard;
+
+BrewCard.propTypes = {
+  brew: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    name: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    image: PropTypes.string,
+    categories: PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.number.isRequired,
+        label: PropTypes.string.isRequired,
+      }),
+    ).isRequired,
+    stage: PropTypes.string.isRequired,
+    user: PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      name: PropTypes.string.isRequired,
+    }).isRequired,
+  }).isRequired,
+  onUpdate: PropTypes.func.isRequired,
+};

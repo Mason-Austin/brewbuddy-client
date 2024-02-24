@@ -1,4 +1,4 @@
-import { clientCredentials } from "../utils/client";
+import { clientCredentials } from '../utils/client';
 
 const getBrewLogByBrew = (brewId) => new Promise((resolve, reject) => {
   fetch(`${clientCredentials.databaseURL}/brew_logs?brew=${brewId}`)
@@ -54,4 +54,10 @@ const deleteSingleBrewLog = (brewLogId) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-export {getBrewLogByBrew, getSingleBrewLog, createBrewLog, updateBrewLog, deleteSingleBrewLog}
+export {
+  getBrewLogByBrew,
+  getSingleBrewLog,
+  createBrewLog,
+  updateBrewLog,
+  deleteSingleBrewLog,
+};

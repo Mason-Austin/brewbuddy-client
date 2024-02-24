@@ -1,3 +1,5 @@
+/* eslint-disable react/forbid-prop-types */
+import PropTypes from 'prop-types';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { useAuth } from '../utils/context/authContext';
@@ -29,3 +31,8 @@ function BrewLogCard({ brewLog, onUpdate, brew }) {
 }
 
 export default BrewLogCard;
+BrewLogCard.propTypes = {
+  brewLog: PropTypes.object.isRequired,
+  onUpdate: PropTypes.func.isRequired,
+  brew: PropTypes.object.isRequired,
+};

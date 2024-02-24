@@ -1,6 +1,9 @@
+/* eslint-disable react/require-default-props */
+/* eslint-disable react/forbid-prop-types */
 import { useEffect, useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
 import { useRouter } from 'next/router';
+import PropTypes from 'prop-types';
 import { getAllCategories } from '../../API/categoryApi';
 import { createBrew, updateBrew } from '../../API/brewApi';
 
@@ -122,3 +125,19 @@ function BrewForm({ user, initalBrew }) {
 }
 
 export default BrewForm;
+
+BrewForm.propTypes = {
+  user: PropTypes.object,
+  initalBrew: PropTypes.shape({
+    name: PropTypes.string,
+    description: PropTypes.string,
+    stage: PropTypes.string,
+    image: PropTypes.string,
+    categories: PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.number,
+        label: PropTypes.string,
+      }),
+    ),
+  }),
+};

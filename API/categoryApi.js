@@ -1,4 +1,4 @@
-import { clientCredentials } from "../utils/client";
+import { clientCredentials } from '../utils/client';
 
 const getAllCategories = () => new Promise((resolve, reject) => {
   fetch(`${clientCredentials.databaseURL}/categories`)
@@ -42,4 +42,9 @@ const createBrewCategory = (categoryId, brewId) => new Promise((resolve, reject)
     .catch((error) => reject(error));
 });
 
-export { getAllCategories, getSingleCategory, deleteBrewCategory, createBrewCategory}
+export {
+  getAllCategories,
+  getSingleCategory,
+  deleteBrewCategory,
+  createBrewCategory,
+};

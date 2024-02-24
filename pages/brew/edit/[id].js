@@ -9,7 +9,6 @@ const NewBrew = () => {
   const [brew, setBrew] = useState({});
   const router = useRouter();
   const { id } = router.query;
-  console.warn(brew);
 
   useEffect(() => {
     getSingleBrew(id).then(setBrew);

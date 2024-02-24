@@ -1,3 +1,6 @@
+/* eslint-disable react/require-default-props */
+/* eslint-disable react/forbid-prop-types */
+import PropTypes from 'prop-types';
 import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
@@ -29,3 +32,9 @@ function BrewLogModel({ brew, onUpdate, brewLog }) {
 }
 
 export default BrewLogModel;
+
+BrewLogModel.propTypes = {
+  brew: PropTypes.object.isRequired,
+  onUpdate: PropTypes.func.isRequired,
+  brewLog: PropTypes.object,
+};

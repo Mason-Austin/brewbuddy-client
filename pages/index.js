@@ -8,7 +8,7 @@ function Home() {
     getBrews().then(setBrews);
   };
 
-  useEffect(() =>{
+  useEffect(() => {
     getAllBrews();
   }, []);
 

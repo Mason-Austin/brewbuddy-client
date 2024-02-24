@@ -1,4 +1,7 @@
+/* eslint-disable react/forbid-prop-types */
+/* eslint-disable react/require-default-props */
 import { useEffect, useState } from 'react';
+import PropTypes from 'prop-types'; // Import PropTypes
 import { Form, Button } from 'react-bootstrap';
 import { updateBrewLog, createBrewLog } from '../../API/brewLogApi';
 
@@ -7,7 +10,12 @@ const initalState = {
   date: '',
 };
 
-function BrewLogForm({ initalBrewLog, brew, onHide, onUpdate }) {
+function BrewLogForm({
+  initalBrewLog,
+  brew,
+  onHide,
+  onUpdate,
+}) {
   const [brewLog, setBrewLog] = useState(initalBrewLog || initalState);
 
   useEffect(() => {
@@ -67,3 +75,13 @@ function BrewLogForm({ initalBrewLog, brew, onHide, onUpdate }) {
 }
 
 export default BrewLogForm;
+
+BrewLogForm.propTypes = {
+  initalBrewLog: PropTypes.shape({
+    log: PropTypes.string,
+    date: PropTypes.string,
+  }),
+  brew: PropTypes.object.isRequired,
+  onHide: PropTypes.func.isRequired,
+  onUpdate: PropTypes.func.isRequired,
+};
