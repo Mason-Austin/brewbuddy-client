@@ -51,7 +51,7 @@ npm run dev
 8. Click http://localhost:3000 in the terminal to open the browser
 9. Make sure the sever side is setup as well. Enjoy!
 ## Relevant Links <!-- Link to all the things that are required outside of the ones that have their own section -->
-- [Wireframes]([https://www.figma.com/file/svGZ43BBtw5uhmCspc6kDY/3.5e-Spell-book?type=design&node-id=0%3A1&mode=design&t=kcYstrhlOxDXDu8d-1](https://www.figma.com/file/sDoylO5F3Bj4uGVKj9uiEZ/BrewBuddy?type=whiteboard&node-id=0-1&t=C0d58Pbr9NtLLnBS-0))
+- [Wireframes](https://www.figma.com/file/sDoylO5F3Bj4uGVKj9uiEZ/BrewBuddy?type=whiteboard&node-id=0-1&t=C0d58Pbr9NtLLnBS-0)
 - [ERD](https://dbdiagram.io/d/Brew-Buddy-65cab807ac844320aeff0b4c)
 - [Project Board](https://github.com/users/Mason-Austin/projects/5)
 - [BrewBuddy-Server](https://github.com/Mason-Austin/brewbuddy-server)
