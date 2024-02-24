@@ -1,44 +1,62 @@
-# React/Next.js Django Auth Template
+# BrewBuddy
 
-## Topics
-- [Get Started](#getting-started)
-- [Starting the Project](#starting-the-project)
-___
-## Getting Started
-### Use Template
-#### 1. To get started, click the GREEN "Use this Template" button at the top of the repo
-<img width="915" alt="Screen Shot 2022-07-06 at 12 54 01 PM" src="https://user-images.githubusercontent.com/29741570/177612998-4aac9237-5a1e-4f13-8ae0-468587521564.png">
-
-#### 2. Make sure YOUR github account is selected in the dropdown and name your project
-<img width="763" alt="Screen Shot 2022-07-06 at 12 54 48 PM" src="https://user-images.githubusercontent.com/29741570/177613126-dd38f678-7553-4f27-8a4a-75680f14d71e.png">
-
-#### 3. Clone your new repo to your local machine
-#### 4. Go to the **NEXT** section
-
-## Starting the Project
-1. Create a Firebase project and set up authentication. Use [these videos](https://vimeo.com/showcase/codetracker-firebase) as a refresher if needed.
-1. Create a `.env` file at the root of the project
-1. Copy/Paste the contents of the `.env.sample` file to your newly created `.env` file.
-1. Copy over all of your Firebase values into the `.env` file.
-1. Open the `package.json` file and change the `name` property to the name of your application, and `author` to  your name.
-1. From your command line, be in the root directory and run `npm install` OR `npm i` for short.
-1. Next, run `npm run prepare`. This command sets up husky to track eslint errors on commit that will make your deploy fail on Netlify.
-1. To start your application, run `npm run dev`. THIS IS THE COMMAND YOU WILL USE TO RUN YOUR DEVELOPMENT SERVER FROM NOW ON.
-1. Open [http://localhost:3000](http://localhost:3000) with your browser.
-
-### If you see this, you are set to go!
-<img width="450" alt="Screen Shot 2022-07-06 at 1 07 27 PM" src="https://user-images.githubusercontent.com/29741570/177615077-9b6a75bc-0260-4d29-bb88-bd95a3140687.png">
+This application allows the user to easly manage their homebrews and see other users homebrews.
 
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## About the User <!-- This is a scaled down user persona -->
+- The target audience for this application primarily consists of homebrewing enthusiasts who seek seamless management of their brewing endeavors. These users are individuals dedicated to crafting their own alcoholic beverages and desire a user-friendly solution to         streamline the organization of their homebrews.
+- This app streamlines the management of brewing batches, enabling users to effortlessly document and replicate their previous brews. It also serves as a platform for users to draw inspiration from each other's brews when crafting new recipes.
 
-**NOTES:** 
-- If you see the following error, you did not follow all the setup steps correctly and failed to add your Firebase creds. Go back and do that NOW.
+## Features <!-- List your app features using bullets! Do NOT use a paragraph. No one will read that! -->
+- Create brews with personalized details including name, description, image, stage, and categories.
+- Access individual brew logs for each brew, allowing users to create, delete, and edit logs as required.
+- Explore a variety of brews crafted by other users within the community.
 
-<img width="1043" alt="Screen Shot 2022-07-06 at 11 18 45 AM" src="https://user-images.githubusercontent.com/29741570/177612501-c2628f18-4bbd-4de9-aae6-27ffba1172d6.png">
-        
-## Learn More about Next.js
-To learn more about Next.js, take a look at the following resources:
+## To get the App setup
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Set up a [Firebase](https://firebase.google.com/) project with just Authentication - Here's how: [Firebase Setup & Authentication](https://www.loom.com/share/163ffe1539bb482196efa713ed6231e9)
+
+2. Clone BrewBuddy-Client to your local machine
+``` bash
+git@github.com:Mason-Austin/brewbuddy-client.git
+```
+
+2. Move into directory
+``` bash
+cd BrewBuddy-Client
+```
+
+3. Once in BrewBuddy's code, create a .env file at the root of the project and paste the following keys into the .env file:
+``` bash
+NEXT_PUBLIC_FIREBASE_API_KEY=""
+NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=""
+NEXT_PUBLIC_DATABASE_URL=http://localhost:8000 
+
+```
+
+4. The last portion of the Firebase walkthrough from step 1 highlights where to find the values to put in the empty strings in the code snippet of step 4. From Firebase, copy the values and paste them into the empty strings of the respective keys located in the .env file.
+
+5. Be in the root directory and from your command line, run
+``` bash
+npm install or npm i
+```
+6. Now from your command line, run
+``` bash
+npm run prepare
+```
+7. To start the app, run
+``` bash
+npm run dev
+```
+8. Click http://localhost:3000 in the terminal to open the browser
+9. Make sure the sever side is setup as well. Enjoy!
+## Relevant Links <!-- Link to all the things that are required outside of the ones that have their own section -->
+- [Wireframes]([https://www.figma.com/file/svGZ43BBtw5uhmCspc6kDY/3.5e-Spell-book?type=design&node-id=0%3A1&mode=design&t=kcYstrhlOxDXDu8d-1](https://www.figma.com/file/sDoylO5F3Bj4uGVKj9uiEZ/BrewBuddy?type=whiteboard&node-id=0-1&t=C0d58Pbr9NtLLnBS-0))
+- [ERD](https://dbdiagram.io/d/Brew-Buddy-65cab807ac844320aeff0b4c)
+- [Project Board](https://github.com/users/Mason-Austin/projects/5)
+- [BrewBuddy-Server](https://github.com/Mason-Austin/brewbuddy-server)
+
+<!-- ## Project Screenshots These can be inside of your project. Look at the repos from class and see how the images are included in the readme <img width="1148" alt="Your Alt" src="your-link.png"> -->
+
+## Contributors
+- [Mason Austin](https://github.com/Mason-Austin)
