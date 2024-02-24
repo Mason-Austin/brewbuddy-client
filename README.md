@@ -1,6 +1,6 @@
 # BrewBuddy
 
-This application allows the user to easly manage their homebrews and see other users homebrews.
+This application simplifies the management of homemade brews while also providing access to a wide range of brews crafted by other users.
 
 
 ## About the User <!-- This is a scaled down user persona -->
