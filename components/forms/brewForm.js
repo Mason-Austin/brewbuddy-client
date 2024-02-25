@@ -50,7 +50,6 @@ function BrewForm({ user, initalBrew }) {
       ...prevState,
       [name]: value,
     }));
-    console.warn(selectedCategories);
   };
 
   const handleSubmit = (e) => {
