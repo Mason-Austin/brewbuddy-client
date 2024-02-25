@@ -66,7 +66,7 @@ function BrewForm({ user, initalBrew }) {
 
     // Send POST request to your API
     if (initalBrew) {
-      updateBrew(brew).then(() => router.push('/'));
+      updateBrew({ ...brew, categories: selectedCategories }).then(() => router.push('/'));
     } else {
       createBrew(currentBrew).then(() => router.push('/'));
     }
