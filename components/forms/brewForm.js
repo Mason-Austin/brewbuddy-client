@@ -50,6 +50,7 @@ function BrewForm({ user, initalBrew }) {
       ...prevState,
       [name]: value,
     }));
+    console.warn(selectedCategories);
   };
 
   const handleSubmit = (e) => {
@@ -66,7 +67,7 @@ function BrewForm({ user, initalBrew }) {
 
     // Send POST request to your API
     if (initalBrew) {
-      updateBrew(brew).then(() => router.push('/'));
+      updateBrew({ ...brew, categories: selectedCategories }).then(() => router.push('/'));
     } else {
       createBrew(currentBrew).then(() => router.push('/'));
     }
